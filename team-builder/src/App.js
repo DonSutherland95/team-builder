@@ -21,26 +21,22 @@ function App() {
 
   const updateForm = (inputName, inputValue) =>{
     setFormValues({...formValues, [inputName]:inputValue});
+    console.log(inputName, inputValue)
   };
 
-  // const submitForm = () => {
-  //   let newMember = {
-  //     username: formValues.username.trim(),
-  //     email: formValues.email.trim(),
-  //     role: formValues.role,
-  //   };
-  //   if (!newMember.username || !newMember.email || !newMember.role) return;
-  //   axios
-  //     .post("fakeapi.com", newFriend)
-  //     .then((res) => {
-  //       setMembers([...members, res.data]);
-  //       setFormValues(initialFormValues);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });   
-  // };
 
+  const submitForm = () => {
+    let newMember = {
+  
+      username: formValues.username.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role,
+    
+    }; 
+    // console.log(...members)
+    setMembers([...members, newMember])
+      
+  }
 
   return (
     <div className="App">
@@ -50,6 +46,7 @@ function App() {
 
       <MemberForm values={formValues}
         update={updateForm}
+        submit={submitForm}
          />
       
     </div>

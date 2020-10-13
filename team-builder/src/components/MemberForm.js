@@ -15,12 +15,12 @@ const onSubmit = (event) => {
   };
     return (
         <div>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>Username:
                     <input type="text"
                         name="username"
                         onChange={onChange}
-                        // value={values.username}
+                        value={values.username}
                         placeholder="type a username"
                         maxLength="30" >
                     </input>
@@ -29,7 +29,7 @@ const onSubmit = (event) => {
                     <input type="text"
                         name="email"
                         onChange={onChange}
-                        // value={values.username}
+                        value={values.email}
                         placeholder="type your email"
                         maxLength="30" >
                     </input>
@@ -38,9 +38,9 @@ const onSubmit = (event) => {
                     Role:
                     <select name="role" /*value={values.role}*/ onChange={onChange}>
                         <option value="">---select role---</option>
-                        <option value="Developer">Student</option>
-                        <option value="Artist">Instructor</option>
-                        <option value="Student">Team Lead</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Artist">Artist</option>
+                        <option value="Student">Student</option>
                     </select>
                     </label>
                 <div className="submit">
